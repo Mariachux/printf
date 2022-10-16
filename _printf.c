@@ -2,8 +2,7 @@
 
 /**
  * _prifntf - produces output according to a format
- * @format: format string containing the characters and 
- * the specifiers
+ * @format: format string containing the characters and the specifiers
  * Return: length if the formatted output string
  */
 int _printf(const char *format, ...)
@@ -16,7 +15,7 @@ int _printf(const char *format, ...)
 	register int count = 0;
 
 	va_start(arguments, format);
-	if (!format || (format[0] == '%'&& !format[1]))
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
@@ -25,7 +24,7 @@ int _printf(const char *format, ...)
 		if (*p == '%')
 		{
 			p++;
-			if (p* == '%')
+			if (*p == '%')
 			{
 				count += _putchar('%');
 				continue;
